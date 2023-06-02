@@ -16,8 +16,9 @@ import {Builder,By, Capabilities, until, WebDriver, } from "selenium-webdriver";
         static nameInput: By = By.name("nameEntry");
         static phoneInput: By = By.name("phoneEntry");
         static titleInput: By = By.name("titleEntry");
+        static saveBtn: By = By.id("saveBtn");
 
-        constructor (driver:WebDriver) {
+        constructor (driver: WebDriver) {
             this.driver = driver;
         };
         static async navigate() {
@@ -45,6 +46,7 @@ import {Builder,By, Capabilities, until, WebDriver, } from "selenium-webdriver";
           await driver.findElement(emPage.titleInput).click();
           await driver.findElement(emPage.titleInput).clear();
           await driver.findElement(emPage.titleInput).sendKeys("CEO of Smiles");
+          await driver.findElement(emPage.saveBtn).click();
   });
 
   /* I didn't have the 2.6 code along before working on this, so I found some work arounds...
